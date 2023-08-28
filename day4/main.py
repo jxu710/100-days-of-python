@@ -29,8 +29,15 @@ scissors = '''
 
 #Write your code below this line 👇
 
-user_choice = int(input('"What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. '))
+user_choice = int(
+  input(
+    '"What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. '))
 
+# check to see if user type invalid number
+
+if user_choice >= 3 or user_choice < 0:
+  print('invalid number')
+  exit()
 if user_choice == 0:
   print(rock)
 elif user_choice == 1:
@@ -38,9 +45,8 @@ elif user_choice == 1:
 else:
   print(scissors)
 
-
-# generate computer choice here 
-computer_choice = random.randint(0,2)
+# generate computer choice here
+computer_choice = random.randint(0, 2)
 if computer_choice == 0:
   print(f"Computer chose:\n {rock}")
 elif computer_choice == 1:
@@ -48,19 +54,19 @@ elif computer_choice == 1:
 else:
   print(f"Computer chose:\n {scissors}")
 
-# Determine who win the game 
+# Determine who win the game
 
 if user_choice == computer_choice:
   print("It's a tie")
-elif user_choice == 0 and computer_choice ==1:
+elif user_choice == 0 and computer_choice == 1:
   print("You lose")
-elif user_choice == 0 and computer_choice ==2:
+elif user_choice == 0 and computer_choice == 2:
   print("You win")
-elif user_choice ==1 and computer_choice ==0:
+elif user_choice == 1 and computer_choice == 0:
   print("You win")
-elif user_choice ==1 and computer_choice ==2:
+elif user_choice == 1 and computer_choice == 2:
   print("You lose")
-elif user_choice ==2 and computer_choice ==0:
+elif user_choice == 2 and computer_choice == 0:
   print("You lose")
 else:
   print("You win")
