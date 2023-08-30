@@ -43,3 +43,11 @@ for letter in chosen_word:
     display.append(letter)
   else:
     display.append("_")
+
+
+# Instructor's solution for this challenge 
+
+for position in range(len(chosen_word)):
+  letter = chosen_word[position]
+  if letter == guess:
+    display[position] = letter
