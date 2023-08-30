@@ -1,4 +1,4 @@
-# This is my solution for the Hurdle 4 challenge at Reeborg's World:  https://reeborg.ca/index_en.html
+# This is my solution for the Hurdle 3 challenge at Reeborg's World:  https://reeborg.ca/index_en.html
 
 def turn_right():
     turn_left()
