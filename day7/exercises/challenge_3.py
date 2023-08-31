@@ -28,3 +28,24 @@ while '_' in display:
   print(display)
 
 print('You win!')
+
+
+# Solution from instructor 
+
+end_of_game = False
+
+while not end_of_game:
+  
+  guess = input("Guess a letter: ").lower()
+  
+  #Check guessed letter
+  for position in range(word_length):
+      letter = chosen_word[position]
+      # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+      if letter == guess:
+          display[position] = letter
+  
+  print(display)
+  if not "_" in display:
+    end_of_game = True
+    print('You Win!')
