@@ -1,7 +1,7 @@
 #Step 5
 
 import random
-
+from replit import clear
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 #Delete this line: word_list = ["ardvark", "baboon", "camel"]
 import hangman_words as list
@@ -23,8 +23,9 @@ for _ in range(word_length):
     display += "_"
 
 while not end_of_game:
-    guess = input("Guess a letter: ").lower()
 
+    guess = input("Guess a letter: ").lower()
+    clear()
     #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
     if guess not in display:
         
@@ -39,7 +40,7 @@ while not end_of_game:
       if guess not in chosen_word:
           #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
           lives -= 1
-          print(f'Letter{guess} is not in the word, You will lose a life!')
+          print(f'Letter {guess} is not in the word, You will lose a life!')
           if lives == 0:
               end_of_game = True
               print("You lose.")
