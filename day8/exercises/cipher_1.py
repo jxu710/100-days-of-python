@@ -31,3 +31,15 @@ def encrypt(text,shift):
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 
 encrypt(text,shift)
+
+# instructor's solution 
+def encrypt(plain_text, shift_amount):
+  cipher_text = ""
+  for letter in plain_text:
+    position = alphabet.index(letter)
+    new_position = (position + shift) % 26
+    new_letter = alphabet[new_position]
+    cipher_text += new_letter
+  print(f"The encoded text is {cipher_text}")
+
+encrypt(plain_text=text, shift_amount=shift)
