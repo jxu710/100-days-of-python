@@ -1,8 +1,5 @@
-
-
-
-
-
+from replit import clear
+from art import logo
 #Calculator
 
 
@@ -35,20 +32,35 @@ operations = {
   "/": divide
 }
 
+def calculator():
 
-num1 = int(input("what is the 1st number?"))
-
-
-for symbol in operations:
-  print(symbol)
-   
+  print(logo)
+  continue_calculation = True
   
-operation_symbol = input("Pick an operation: ")
-num2 = int(input("What's the next number?: "))
-# based on user selection, we find the corresponding operation function inside the operations dictionary 
-calculation_function = operations[operation_symbol]
-# call the corresponding function with user picked numbers and saved to answer variable
-answer = calculation_function(num1, num2)
+  num1 = int(input("what is the 1st number? "))
+    
+  for symbol in operations:
+    print(symbol)
+       
+  while continue_calculation:
+    
+    
+      
+    operation_symbol = input("Pick an operation: ")
+    num2 = int(input("What's the next number?: "))
+    # based on user selection, we find the corresponding operation function inside the operations dictionary 
+    calculation_function = operations[operation_symbol]
+    # call the corresponding function with user picked numbers and saved to answer variable
+    answer = calculation_function(num1, num2)
+    print(f"{num1} {operation_symbol} {num2} = {answer}")
+  
+  
+    if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ") == 'y':
+      num1 = answer
+    else:
+      continue_calculation = False
+      clear()
+      calculator()
+  
+calculator()
 
-
-print(f"{num1} {operation_symbol} {num2} = {answer}")
