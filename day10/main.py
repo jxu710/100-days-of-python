@@ -37,7 +37,7 @@ def calculator():
   print(logo)
   continue_calculation = True
   
-  num1 = int(input("what is the 1st number? "))
+  num1 = float(input("what is the 1st number? "))
     
   for symbol in operations:
     print(symbol)
@@ -47,7 +47,7 @@ def calculator():
     
       
     operation_symbol = input("Pick an operation: ")
-    num2 = int(input("What's the next number?: "))
+    num2 = float(input("What's the next number?: "))
     # based on user selection, we find the corresponding operation function inside the operations dictionary 
     calculation_function = operations[operation_symbol]
     # call the corresponding function with user picked numbers and saved to answer variable
