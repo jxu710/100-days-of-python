@@ -56,7 +56,15 @@ print(user_cards,computer_cards)
 #Hint 6: Create a function called calculate_score() that takes a List of cards as input 
 #and returns the score. 
 #Look up the sum() function to help you do this.
-
+def calculate_score(list):
+  if sum(list) == 21:
+    return 0
+  elif sum(list) > 21 and 11 in list:
+    list.remove(11)
+    list.append(1)
+  else:
+    return sum(list)
+print(calculate_score(user_cards))
 #Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
 
 #Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
