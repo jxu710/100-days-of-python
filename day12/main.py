@@ -24,4 +24,10 @@ print("Pssst, the correct answer is", ANSWER)
 level_of_game = input("Choose a difficulty. Type 'easy' or 'hard': ")
 if level_of_game == "easy":
     print(f"You have {EASY} attempts remaining to guess the number.")
-    
+    guess = int(input("Make a guess: "))
+    if guess == ANSWER:
+      print(f"You got it! The answer was {ANSWER}.")
+    elif guess > ANSWER:
+      print("Too high.")
+      EASY= EASY -1 
+      print(f"You have {EASY} attempts remaining to guess the number.")
