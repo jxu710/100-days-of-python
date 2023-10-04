@@ -13,6 +13,9 @@ def game():
   while not end_game:
     option_a = random.choice(data)
     option_b = random.choice(data)
+
+    if option_a == option_b:
+      game()
     print(f"Compare A:{option_a['name']}, a {option_a['description']} , from {option_a['country']}")
     print(vs)
     print(f"Compare B:{option_b['name']}, a {option_b['description']} , from {option_b['country']}")
@@ -36,5 +39,8 @@ def game():
     elif guess == "B" and option_a["follower_count"] > option_b["follower_count"]:
       clear()
       print(f"Sorry, that's wrong. Final score: {point}")
+      end_game = True
+    else:
+      print("wrong input, pick between a or b")
       end_game = True
 game()
